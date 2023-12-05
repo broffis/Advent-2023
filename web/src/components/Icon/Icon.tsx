@@ -15,13 +15,13 @@ export type IconName =
   | 'user'
 export type IconProps = {
   id: IconName
-  color?: string
+  colorHex?: string
   size?: number
 }
-const Icon = ({ id, size = 24 }: IconProps) => {
+const Icon = ({ id, size = 24, colorHex }: IconProps) => {
   console.log(id)
   return (
-    <svg width={size} height={size}>
+    <svg width={size} height={size} fill={colorHex}>
       <use href={`/icons/sprite.svg#${id}`} />
     </svg>
   )
